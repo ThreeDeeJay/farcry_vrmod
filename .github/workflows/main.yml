@@ -15,12 +15,12 @@ jobs:
     permissions: write-all
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4.2.2
         with:
           submodules: recursive
 
       - name: Setup Python (for meson)
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5.5.0
         with:
           python-version: '3.x'
 
@@ -28,14 +28,14 @@ jobs:
         run: pip install meson ninja
 
       - name: Install Vulkan SDK
-        uses: humbletim/setup-vulkan-sdk@v1.2.0
+        uses: humbletim/setup-vulkan-sdk@v1.2.1
         with:
           vulkan-query-version: 1.3.261.1
           vulkan-use-cache: true
           vulkan-components: Glslang
 
       - name: Setup MSBuild
-        uses: microsoft/setup-msbuild@v1.1
+        uses: microsoft/setup-msbuild@v2
         with:
           msbuild-architecture: x86
 
