@@ -20,7 +20,7 @@ jobs:
           submodules: recursive
 
       - name: Setup Python (for meson)
-        uses: actions/setup-python@v5.5.0
+        uses: actions/setup-python@v2
         with:
           python-version: '3.x'
 
